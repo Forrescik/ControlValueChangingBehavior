@@ -10,27 +10,45 @@
 		<viewModels:MainVindowViewModel/>
 	</Window.DataContext>
 	<Grid>
-		<CustomControls:TextBoxControl HorizontalAlignment="Left" Margin="53,10,0,0" Width="100" TextWrapping="Wrap" Text="{Binding MyTextBoxControl}" VerticalAlignment="Top">
-			<i:Interaction.Behaviors>
-				<CustomControls:EditValueChangingBehavior StateChangingEvent="EditValueChangingBehavior_OnStateChangingEvent"/>
-			</i:Interaction.Behaviors>
-		</CustomControls:TextBoxControl>
-		<TextBox HorizontalAlignment="Left" Height="23" Margin="53,46,0,0" TextWrapping="Wrap" Text="{Binding SystemTextBox}" VerticalAlignment="Top" Width="100">
-			<i:Interaction.Behaviors>
-				<CustomControls:EditValueChangingBehavior StateChangingEvent="EditValueChangingBehavior_OnStateChangingEvent"/>
-			</i:Interaction.Behaviors>
-		</TextBox>
-		<CustomControls:CheckBoxControl Content="Mój checkBox" IsChecked="{Binding MyCheckBoxControl}" HorizontalAlignment="Left" Margin="53,92,0,0" VerticalAlignment="Top">
-			<i:Interaction.Behaviors>
-				<CustomControls:EditValueChangingBehavior StateChangingEvent="EditValueChangingBehavior_OnStateChangingEvent"/>
-			</i:Interaction.Behaviors>
-		</CustomControls:CheckBoxControl>
-		<CheckBox Content="Pozwól na zmianę" Name="AllowCheckBox" IsChecked="{Binding AllowChanging}" HorizontalAlignment="Left" Margin="371,16,0,0" VerticalAlignment="Top"/>
-		<CustomControls:ComboBoxControl ItemsSource="{Binding ComboBoxList}" HorizontalAlignment="Left" Margin="53,125,0,0" VerticalAlignment="Top" Width="94">
-			<i:Interaction.Behaviors>
-				<CustomControls:EditValueChangingBehavior StateChangingEvent="EditValueChangingBehavior_OnStateChangingEvent"/>
-			</i:Interaction.Behaviors>
-		</CustomControls:ComboBoxControl>
+		
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="180"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Label Content="Custom control" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"></Label>
+			<Label Content="WPF control" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"></Label>
+			<Label Content="Custom control" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"></Label>
+			<Label Content="Custom control" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"></Label>
+			<CustomControls:TextBoxControl Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Width="100" TextWrapping="Wrap" Text="{Binding MyTextBoxControl}" VerticalAlignment="Center">
+				<i:Interaction.Behaviors>
+					<CustomControls:EditValueChangingBehavior StateChangingEvent="EditValueChangingBehavior_OnStateChangingEvent"/>
+				</i:Interaction.Behaviors>
+			</CustomControls:TextBoxControl>
+			<TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding SystemTextBox}" VerticalAlignment="Center" Width="100">
+				<i:Interaction.Behaviors>
+					<CustomControls:EditValueChangingBehavior StateChangingEvent="EditValueChangingBehavior_OnStateChangingEvent"/>
+				</i:Interaction.Behaviors>
+			</TextBox>
+			<CustomControls:CheckBoxControl Grid.Row="2" Grid.Column="1" Content="Mój checkBox" IsChecked="{Binding MyCheckBoxControl}" HorizontalAlignment="Left" VerticalAlignment="Center">
+				<i:Interaction.Behaviors>
+					<CustomControls:EditValueChangingBehavior StateChangingEvent="EditValueChangingBehavior_OnStateChangingEvent"/>
+				</i:Interaction.Behaviors>
+			</CustomControls:CheckBoxControl>
+			<CustomControls:ComboBoxControl Grid.Row="3" Grid.Column="1" ItemsSource="{Binding ComboBoxList}" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="94">
+				<i:Interaction.Behaviors>
+					<CustomControls:EditValueChangingBehavior StateChangingEvent="EditValueChangingBehavior_OnStateChangingEvent"/>
+				</i:Interaction.Behaviors>
+			</CustomControls:ComboBoxControl>
+			<CheckBox Grid.Row="4" Grid.Column="1" Content="Pozwól na zmianę" x:Name="AllowCheckBox" IsChecked="{Binding AllowChanging}" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
+		</Grid>
 
 	</Grid>
 </Window>
