@@ -1,13 +1,12 @@
 ﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:CustomControls="clr-namespace:CustomControls;assembly=CustomControls" 
 		xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
 		x:Class="ControlBehaviors.MainWindow"
-    	xmlns:viewModels="clr-namespace:ControlBehaviorsViewModel;assembly=ControlBehaviorsViewModel"
+	xmlns:local="clr-namespace:ControlBehaviors"
         Title="MainWindow" Height="350" Width="525">
 	<Window.DataContext>
-		<viewModels:MainVindowViewModel/>
+		<local:MainVindowViewModel/>
 	</Window.DataContext>
 	<Grid>
 		
@@ -27,26 +26,26 @@
 			<Label Content="WPF control" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"></Label>
 			<Label Content="Custom control" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"></Label>
 			<Label Content="Custom control" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"></Label>
-			<CustomControls:TextBoxControl Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Width="100" TextWrapping="Wrap" Text="{Binding MyTextBoxControl}" VerticalAlignment="Center">
+			<local:TextBoxControl Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Width="100" TextWrapping="Wrap" Text="{Binding MyTextBoxControl}" VerticalAlignment="Center">
 				<i:Interaction.Behaviors>
-					<CustomControls:EditValueChangingBehavior StateChangingEvent="EditValueChangingBehavior_OnStateChangingEvent"/>
+					<local:EditValueChangingBehavior StateChangingEvent="EditValueChangingBehavior_OnStateChangingEvent"/>
 				</i:Interaction.Behaviors>
-			</CustomControls:TextBoxControl>
+			</local:TextBoxControl>
 			<TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding SystemTextBox}" VerticalAlignment="Center" Width="100">
 				<i:Interaction.Behaviors>
-					<CustomControls:EditValueChangingBehavior StateChangingEvent="EditValueChangingBehavior_OnStateChangingEvent"/>
+					<local:EditValueChangingBehavior StateChangingEvent="EditValueChangingBehavior_OnStateChangingEvent"/>
 				</i:Interaction.Behaviors>
 			</TextBox>
-			<CustomControls:CheckBoxControl Grid.Row="2" Grid.Column="1" Content="Mój checkBox" IsChecked="{Binding MyCheckBoxControl}" HorizontalAlignment="Left" VerticalAlignment="Center">
+			<local:CheckBoxControl Grid.Row="2" Grid.Column="1" Content="Mój checkBox" IsChecked="{Binding MyCheckBoxControl}" HorizontalAlignment="Left" VerticalAlignment="Center">
 				<i:Interaction.Behaviors>
-					<CustomControls:EditValueChangingBehavior StateChangingEvent="EditValueChangingBehavior_OnStateChangingEvent"/>
+					<local:EditValueChangingBehavior StateChangingEvent="EditValueChangingBehavior_OnStateChangingEvent"/>
 				</i:Interaction.Behaviors>
-			</CustomControls:CheckBoxControl>
-			<CustomControls:ComboBoxControl Grid.Row="3" Grid.Column="1" ItemsSource="{Binding ComboBoxList}" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="94">
+			</local:CheckBoxControl>
+			<local:ComboBoxControl Grid.Row="3" Grid.Column="1" ItemsSource="{Binding ComboBoxList}" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="94">
 				<i:Interaction.Behaviors>
-					<CustomControls:EditValueChangingBehavior StateChangingEvent="EditValueChangingBehavior_OnStateChangingEvent"/>
+					<local:EditValueChangingBehavior StateChangingEvent="EditValueChangingBehavior_OnStateChangingEvent"/>
 				</i:Interaction.Behaviors>
-			</CustomControls:ComboBoxControl>
+			</local:ComboBoxControl>
 			<CheckBox Grid.Row="4" Grid.Column="1" Content="Pozwól na zmianę" x:Name="AllowCheckBox" IsChecked="{Binding AllowChanging}" HorizontalAlignment="Left"  VerticalAlignment="Center"/>
 		</Grid>
 
